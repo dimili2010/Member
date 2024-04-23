@@ -1,0 +1,39 @@
+﻿@model MemberViewModel
+
+<form method="post">
+    <div class="border p-3 mt-4">    
+        <div class="row pb-2">
+            <h2 class="text-primary">Insert Member</h2><hr/>
+        </div>
+        <div asp-validation-summary="All"></div>
+        <div class="mb-3 row p-1">
+            <label class="p-0">Full Name</label>
+            <input asp-for="FullName" type="text" class="form-control"/>
+            <span asp-validation-for="FullName" class="text-danger"></span>
+        </div>
+        <div class="mb-3 row p-1">
+            <label class="p-0">Email</label>
+            <input asp-for="Email" type="text" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="mb-3 row p-1">
+            <label class="p-0">Gender</label>
+            <input asp-for="Gender" type="text" class="form-control" />
+            <span asp-validation-for="Gender" class="text-danger"></span>
+        </div>
+        <div class="row">
+            <div class="col-6 col-md-3">
+                <button type="submit" class="btn btn-primary form-control">Insert</button>
+            </div>
+            <div class="col-6 col-md-3">
+                <a asp-controller="Member" asp-action="Index" class="btn btn-outline-secondary border form-control">Back to List</a>
+            </div>            
+        </div>              
+    </div>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

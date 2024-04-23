@@ -1,0 +1,31 @@
+﻿@model MemberViewModel
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <input asp-for="MemberId" hidden />
+        <div class="row pb-2">
+            <h2 class="text-primary">Delete Member</h2><hr />
+        </div>
+        <div asp-validation-summary="All"></div>
+        <div class="mb-3 row p-1">
+            <label class="p-0">Full Name</label>
+            <input asp-for="FullName" disabled type="text" class="form-control" />
+        </div>
+        <div class="mb-3 row p-1">
+            <label class="p-0">Email</label>
+            <input asp-for="Email" disabled type="text" class="form-control" />
+        </div>
+        <div class="mb-3 row p-1">
+            <label class="p-0">Gender</label>
+            <input asp-for="Gender" disabled type="text" class="form-control" />
+        </div>
+        <div class="row">
+            <div class="col-6 col-md-3">
+                <button type="submit" class="btn btn-danger form-control" onclick="return confirm('¿Are you sure to delete this item?');">Delete</button>
+            </div>
+            <div class="col-6 col-md-3">
+                <a asp-controller="Member" asp-action="Index" class="btn btn-outline-secondary border form-control">Back to List</a>
+            </div>
+        </div>
+    </div>
+</form>
